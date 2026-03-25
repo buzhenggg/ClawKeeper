@@ -213,38 +213,57 @@ The skill scan detected a high-risk remote script execution (curl-to-bash) vulne
 
 # 📂 Architecture
 
-Clawkeeper consists of three core layers:
+Clawkeeper consists of multiple core layers:
 
-1. **Core Engine** (`src/core/`)
-   - `audit-engine.js` — Configuration validation
-   - `hardening.js` — Auto-remediation
-   - `skill-scanner.js` — Third-party code analysis
-   - `drift-monitor.js` — Real-time change detection
-   - `security-rules.js` — Declarative security policies
+1. **Configuration** (`src/config/`)
+   - `core-rules.json` — Security rules configuration and policy definitions
 
-2. **Plugin System** (`src/plugin/`)
-   - `sdk.js` — OpenClaw plugin entry point
-   - `cli.js` — Command-line interface
-   - Hook integration for tool interception
+2. **Core Engine** (`src/core/`)
+   - `audit-engine.js` — Configuration validation and auditing
+   - `audit-engine-extended.js` — Extended audit capabilities
+   - `hardening.js` — Auto-remediation and security fixes
+   - `skill-scanner.js` — Supply chain security scanning
+   - `security-scanner.js` — Comprehensive security scanning
+   - `drift-monitor.js` — Real-time configuration drift detection
+   - `security-rules.js` — Declarative security policies and rule enforcement
+   - `interceptor.js` — Tool call interception and monitoring
+   - `rollback.js` — Configuration rollback and recovery
+   - `controls.js` — Security control definitions
+   - `state.js` — State management and persistence
+   - `metadata.js` — Metadata utilities and helpers
 
-3. **Reporting** (`src/reporters/`)
-   - `console-reporter.js` — Human-readable output
-   - `json-reporter.js` — Machine-readable export
+3. **Plugin System** (`src/plugin/`)
+   - `sdk.js` — OpenClaw plugin entry point and integration
+   - `cli.js` — Command-line interface and commands
+   - Hook integration for tool interception and event handling
+
+4. **Reporting** (`src/reporters/`)
+   - `console-reporter.js` — Human-readable terminal output
+   - `json-reporter.js` — Machine-readable JSON export
+
+5. **Entry Point** (`src/`)
+   - `index.js` — Main module entry point
 
 ### File Structure
 
 ```
 src/
+  ├── config/            # Configuration files
+  │   └── core-rules.json       # Security rules configuration
   ├── core/              # Core security logic
   │   ├── audit-engine.js       # Configuration auditing
+  │   ├── audit-engine-extended.js   # Extended audit capabilities
   │   ├── hardening.js          # Auto-fixes and hardening
   │   ├── skill-scanner.js      # Supply chain scanning
+  │   ├── security-scanner.js   # Security scanning
   │   ├── drift-monitor.js      # Configuration drift detection
   │   ├── security-rules.js     # Security policy rules
   │   ├── interceptor.js        # Tool call interception
   │   ├── rollback.js           # Configuration rollback
   │   ├── controls.js           # Security control definitions
+  │   ├── state.js              # State management
   │   └── metadata.js           # Metadata utilities
+  ├── index.js           # Main entry point
   ├── plugin/            # OpenClaw integration
   │   ├── sdk.js         # Plugin entry point
   │   └── cli.js         # CLI commands
@@ -252,7 +271,6 @@ src/
       ├── console-reporter.js   # Terminal output
       └── json-reporter.js      # JSON export
 
-skill/                   # Clawkeeper skill for OpenClaw
 examples/               # Example skills for testing
 test/                   # Test suite
 ```
