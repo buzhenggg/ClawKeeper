@@ -13,7 +13,7 @@
 
 Clawkeeper is centered on `clawkeeper-watcher`, a governance watcher for OpenClaw that adds context judgment, audit, hardening, drift monitoring, rollback, and remote risk intelligence around the runtime. The repository also includes the `clawkeeper` launcher for mode-scoped execution and `clawkeeper-bands`, a user-side approval and bridge plugin for notifications, confirmations, and remote judge relay.
 
-[Repository](https://github.com/xunyoyo/clawkeeper) · [Watcher Plugin](plugins/clawkeeper-watcher/README.md) · [Bands Plugin](plugins/clawkeeper-bands/README.md) · [Clawkeeper Skill](skills/clawkeeper/SKILL.md) · [License](LICENSE)
+[Repository](https://github.com/SafeAI-Lab-X/ClawKeeper/README.md) · [Watcher Plugin](plugins/clawkeeper-watcher/README.md) · [Bands Plugin](plugins/clawkeeper-bands/README.md) · [Clawkeeper Skill](skills/clawkeeper/SKILL.md) · [License](LICENSE)
 
 This repo also ships a matching OpenClaw skill at `skills/clawkeeper/SKILL.md` for setup, configuration, verification, and debugging workflows.
 
