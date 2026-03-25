@@ -1,6 +1,6 @@
 # 🦞🛡️ ClawKeeper: Comprehensive Safety Protection for OpenClaw Agents Through Skills, Plugins, and Watchers 
 
-<p align="center"><b><i style="font-size: 2.0em;">(aka The Norton for OpenClaw)</i></b></p>
+<h1 align="center"><i>(aka The Norton for OpenClaw)</i></h1>
 
 <p align="center">
     <img src="./fig/logo.png" alt="OpenClaw" width="700">
